@@ -96,44 +96,4 @@ train_model(model, train_loader, criterion, optimizer)
 torch.save(model.state_dict(), "skin_cancer_model_resnet.pth")
 print("Model saved")
 
-
-# def calculate_accuracy(model, data_loader):
-#     correct = 0
-#     total = 0
-#     model.eval()
-#     with torch.no_grad():
-#         for inputs, labels in data_loader:
-#             outputs = model(inputs)
-#             _, predicted = torch.max(outputs, 1)
-#             total += labels.size(0)
-#             correct += (predicted == labels).sum().item()
-#     accuracy = correct / total
-#     return accuracy
-
-# # Calculate accuracy on training data
-# train_accuracy = calculate_accuracy(model, train_loader)
-# print(f"Training Accuracy: {train_accuracy:.2f}")
-
-
-# # Predictions on test set
-# model.eval()
-# with torch.no_grad():
-#     outputs = model(test_images)
-#     _, predicted_labels = torch.max(outputs, 1)
-
-# # Convert tensors to numpy arrays
-# predicted_labels = predicted_labels.numpy()
-# true_labels = test_labels.numpy()
-
-# # 2. Confusion Matrix
-# conf_matrix = confusion_matrix(true_labels, predicted_labels)
-# print("Confusion Matrix:")
-# print(conf_matrix)
-
-# # 3. Precision and Recall
-# print("Classification Report:")
-# print(classification_report(true_labels, predicted_labels))
-
-# # 4. F1-score
-# f1_score = classification_report(true_labels, predicted_labels, output_dict=True)['weighted avg']['f1-score']
-# print(f"F1-Score: {f1_score:.2f}")
+        
